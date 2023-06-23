@@ -6,6 +6,6 @@ namespace DA.Watchdog.Contracts
 	public interface IWatcher
 	{
 		void Init(Observable obs, WatchdogContext context);
-		Task<bool?> CheckAsync();
+		Task<bool?> CheckAsync(bool autoSaveResult);
 	}
 }

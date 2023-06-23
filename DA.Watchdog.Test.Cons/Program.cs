@@ -18,14 +18,8 @@ namespace DA.Watchdog.Test.Cons
 				obs.ForEach(x =>
 				{
 					watcher.Init(x, ctx);
-					bool? result = watcher.CheckAsync().Result;
-					if (result.HasValue)
-					{
-						Check check = new Check { CheckId=Guid.NewGuid(), Success = result.Value, TimeStamp = DateTime.Now };
-						x.Check.Add(check);
-					}
+					bool? result = watcher.CheckAsync(true).Result;
 				});
-				ctx.SaveChanges();
 			}
 		}
 	}

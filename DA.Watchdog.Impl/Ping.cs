@@ -17,7 +17,7 @@ namespace DA.Watchdog.Impl
 			observable = obs;
 		}
 
-		public async Task<bool?> CheckAsync()
+		public async Task<bool?> CheckAsync(bool autoSaveResult)
 		{
 			if (observable.ObservableMeta.Active.Value)
 			{
@@ -30,7 +30,12 @@ namespace DA.Watchdog.Impl
 				byte[] buffer = Encoding.ASCII.GetBytes(data);
 				int timeout = 120;
 				PingReply reply = await ping.SendPingAsync(observable.ObservableMeta.Hostname, timeout, buffer, pingOptions);
-				return reply.Status == IPStatus.Success;
+
+				Check check = new Check { CheckId = Guid.NewGuid(), TimeStamp = DateTime.Now, Success = reply.Status == IPStatus.Success };
+				observable.Check.Add(check);
+				if (autoSaveResult)
+					await ctx.SaveChangesAsync();
+				return check.Success;
 			}
 			return null;
 		}
