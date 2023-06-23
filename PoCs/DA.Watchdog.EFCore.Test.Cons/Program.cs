@@ -27,6 +27,10 @@ namespace DA.Watchdog.EFCore.Test.Cons
 				o.ObservableMeta = new ObservableMeta { CreationDate = DateTime.Now };
 				c.Observable.Add(o);
 				await c.SaveChangesAsync();
+				// now lets modify an observable
+				Observable o2 = c.Observable.First<Observable>();
+				o2.Name = "xyz";
+				c.SaveChanges();
 			}
 		}
 	}
