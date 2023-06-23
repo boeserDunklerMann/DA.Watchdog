@@ -3,6 +3,7 @@ use Watchdog;
 declare @oid uniqueidentifier = newid();
 
 delete from [Check];
+delete from ObservableMeta;
 delete from Observable;
 
 insert into Observable

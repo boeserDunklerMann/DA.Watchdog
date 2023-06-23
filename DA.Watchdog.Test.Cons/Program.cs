@@ -31,7 +31,7 @@ namespace DA.Watchdog.Test.Cons
 				// all jobs enqueued for one-time-execution, now start JobServer
 				using (var hfServer = new BackgroundJobServer())
 				{
-					//Console.ReadLine();
+					Console.ReadLine();
 				}
 			}
 		}
