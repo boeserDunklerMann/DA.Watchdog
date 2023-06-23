@@ -26,13 +26,12 @@ namespace DA.Watchdog.Test.Cons
 				obs.ForEach(x =>
 				{
 					IWatcher watcher = ContractBinder.GetObject<IWatcher>();
-					watcher.Init(x, ctx);
-					hfClient.Enqueue(() => watcher.CheckAsync(true));
+					hfClient.Enqueue(() => watcher.CheckAsync(true, x.ObservableId));
 				});
 				// all jobs enqueued for one-time-execution, now start JobServer
 				using (var hfServer = new BackgroundJobServer())
 				{
-					Console.ReadLine();
+					//Console.ReadLine();
 				}
 			}
 		}
