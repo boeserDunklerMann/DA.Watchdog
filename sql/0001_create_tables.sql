@@ -16,7 +16,7 @@ if not exists(select * from sys.tables where name='Check' and type='U')
 	(
 		CheckID uniqueidentifier not null,
 		ObservableID uniqueidentifier not null,
-		[TimeStamp] timestamp not null,
+		[TimeStamp] datetime not null default getdate(),
 		Success bit not null,
 		constraint PK_Check primary key (CheckID),
 		constraint FK_Check_Observable foreign key (ObservableID)

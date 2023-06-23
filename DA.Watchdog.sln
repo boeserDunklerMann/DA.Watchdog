@@ -3,9 +3,40 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.33110.190
 MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PoCs", "PoCs", "{E5C4D903-C581-40E4-8F4C-36A94597BCEB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DA.Watchdog.EFCore.Test.Cons", "PoCs\DA.Watchdog.EFCore.Test.Cons\DA.Watchdog.EFCore.Test.Cons.csproj", "{89BBAD10-F454-437B-9D8C-F8A8BF7AE4D8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{D593D81F-EC3E-43E9-8522-FF06D1449700}"
+	ProjectSection(SolutionItems) = preProject
+		sql\0000_create_db.sql = sql\0000_create_db.sql
+		sql\0001_create_tables.sql = sql\0001_create_tables.sql
+		README.md = README.md
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "sql", "sql", "{B1135253-1F22-4692-AE8A-623FACC69BFA}"
+	ProjectSection(SolutionItems) = preProject
+		sql\0000_create_db.sql = sql\0000_create_db.sql
+		sql\0001_create_tables.sql = sql\0001_create_tables.sql
+		sql\0002_create_testdata.sql = sql\0002_create_testdata.sql
+	EndProjectSection
+EndProject
 Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{89BBAD10-F454-437B-9D8C-F8A8BF7AE4D8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{89BBAD10-F454-437B-9D8C-F8A8BF7AE4D8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{89BBAD10-F454-437B-9D8C-F8A8BF7AE4D8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{89BBAD10-F454-437B-9D8C-F8A8BF7AE4D8}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{89BBAD10-F454-437B-9D8C-F8A8BF7AE4D8} = {E5C4D903-C581-40E4-8F4C-36A94597BCEB}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {A5D74836-A19C-4019-A72F-4C451D140875}
