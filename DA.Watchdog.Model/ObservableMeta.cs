@@ -1,0 +1,15 @@
+﻿using System;
+using System.Collections.Generic;
+
+namespace DA.Watchdog.Model
+{
+    public partial class ObservableMeta
+    {
+        public Guid ObservableId { get; set; }
+        public DateTime? CreationDate { get; set; }
+        public string Hostname { get; set; }
+        public bool? Active { get; set; }
+
+        public virtual Observable Observable { get; set; }
+    }
+}
