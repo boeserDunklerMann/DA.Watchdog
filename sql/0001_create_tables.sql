@@ -22,3 +22,15 @@ if not exists(select * from sys.tables where name='Check' and type='U')
 		constraint FK_Check_Observable foreign key (ObservableID)
 			references Observable(ObservableID)
 	);
+
+/* contains some additional data for observables */
+if not exists (select * from sys.tables where name='ObservableMeta' and type='U')
+	create table ObservableMeta
+	(
+		ObservableID uniqueidentifier not null,
+		CreationDate datetime,
+		Active bit not null default 1,
+		constraint PK_ObservableMeta primary key(ObservableID),
+		constraint FK_ObservableMeta_Observable foreign key (ObservableID)
+			references Observable(ObservableID)
+	);

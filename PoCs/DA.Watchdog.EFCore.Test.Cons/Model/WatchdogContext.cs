@@ -17,6 +17,7 @@ namespace DA.Watchdog.EFCore.Test.Cons.Model
 
         public virtual DbSet<Check> Check { get; set; }
         public virtual DbSet<Observable> Observable { get; set; }
+        public virtual DbSet<ObservableMeta> ObservableMeta { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -57,6 +58,27 @@ namespace DA.Watchdog.EFCore.Test.Cons.Model
                 entity.Property(e => e.Name)
                     .HasColumnName("name")
                     .HasMaxLength(100);
+            });
+
+            modelBuilder.Entity<ObservableMeta>(entity =>
+            {
+                entity.HasKey(e => e.ObservableId);
+
+                entity.Property(e => e.ObservableId)
+                    .HasColumnName("ObservableID")
+                    .ValueGeneratedNever();
+
+                entity.Property(e => e.Active)
+                    .IsRequired()
+                    .HasDefaultValueSql("((1))");
+
+                entity.Property(e => e.CreationDate).HasColumnType("datetime");
+
+                entity.HasOne(d => d.Observable)
+                    .WithOne(p => p.ObservableMeta)
+                    .HasForeignKey<ObservableMeta>(d => d.ObservableId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK_ObservableMeta_Observable");
             });
 
             OnModelCreatingPartial(modelBuilder);

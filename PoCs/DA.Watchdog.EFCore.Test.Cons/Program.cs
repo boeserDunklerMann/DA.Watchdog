@@ -2,12 +2,13 @@
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Linq;
+using System.Threading.Tasks;
 
 namespace DA.Watchdog.EFCore.Test.Cons
 {
 	internal class Program
 	{
-		static void Main(string[] args)
+		static async Task Main(string[] args)
 		{
 			Console.WriteLine("Hello World!");
 			using (WatchdogContext c = new WatchdogContext())
@@ -21,6 +22,11 @@ namespace DA.Watchdog.EFCore.Test.Cons
 				{
 					Console.WriteLine($"Obs: {check.Observable.Name} - when: {check.TimeStamp} - succeeded: {(check.Success ? "yes" : "no")}");
 				});
+				// now lets create an observable
+				Observable o = new Observable { Name = "test", ObservableId=Guid.NewGuid(), Remarks="Test from EFCore" };
+				o.ObservableMeta = new ObservableMeta { CreationDate = DateTime.Now };
+				c.Observable.Add(o);
+				await c.SaveChangesAsync();
 			}
 		}
 	}

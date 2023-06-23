@@ -14,6 +14,7 @@ namespace DA.Watchdog.EFCore.Test.Cons.Model
         public string Name { get; set; }
         public string Remarks { get; set; }
 
+        public virtual ObservableMeta ObservableMeta { get; set; }
         public virtual ICollection<Check> Check { get; set; }
     }
 }
