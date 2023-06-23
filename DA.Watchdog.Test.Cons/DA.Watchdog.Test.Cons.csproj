@@ -6,6 +6,11 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Hangfire.Core" Version="1.8.2" />
+    <PackageReference Include="Hangfire.SqlServer" Version="1.8.2" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\DA.Watchdog.Commons\DA.Watchdog.Commons.csproj" />
     <ProjectReference Include="..\DA.Watchdog.Contracts\DA.Watchdog.Contracts.csproj" />
     <ProjectReference Include="..\DA.Watchdog.Impl\DA.Watchdog.Impl.csproj" />
