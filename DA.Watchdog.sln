@@ -21,6 +21,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "sql", "sql", "{B1135253-1F2
 		sql\0002_create_testdata.sql = sql\0002_create_testdata.sql
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DA.Watchdog.Contracts", "DA.Watchdog.Contracts\DA.Watchdog.Contracts.csproj", "{77FDDACF-3507-4D2E-AB87-BE6DAD03F113}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -31,6 +33,10 @@ Global
 		{89BBAD10-F454-437B-9D8C-F8A8BF7AE4D8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{89BBAD10-F454-437B-9D8C-F8A8BF7AE4D8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{89BBAD10-F454-437B-9D8C-F8A8BF7AE4D8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{77FDDACF-3507-4D2E-AB87-BE6DAD03F113}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{77FDDACF-3507-4D2E-AB87-BE6DAD03F113}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{77FDDACF-3507-4D2E-AB87-BE6DAD03F113}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{77FDDACF-3507-4D2E-AB87-BE6DAD03F113}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
