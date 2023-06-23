@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\DA.Watchdog.Contracts\DA.Watchdog.Contracts.csproj" />
+    <ProjectReference Include="..\DA.Watchdog.Impl\DA.Watchdog.Impl.csproj" />
+    <ProjectReference Include="..\DA.Watchdog.Model\DA.Watchdog.Model.csproj" />
+  </ItemGroup>
+
+</Project>

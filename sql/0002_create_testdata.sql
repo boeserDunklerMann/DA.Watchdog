@@ -15,3 +15,6 @@ values
 	(NEWID(), @oid, 0),
 	(NEWID(), @oid, 0)
 ;
+
+insert into ObservableMeta
+values (@oid, GETDATE(), 'localhost', 1);
